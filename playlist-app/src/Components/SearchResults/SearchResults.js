@@ -7,7 +7,7 @@ export default class SearchResults extends React.Component{
         return(
             <div className="SearchResults">
             <h2>Results</h2>
-                <Tracklist /> 
+                <TrackList tracks={this.props.searchResults}/> 
             </div>
         )
     }

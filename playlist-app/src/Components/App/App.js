@@ -2,8 +2,23 @@ import './App.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from '../SearchBar/SearchBar.js' 
+import SearchResults from '../SearchResults/SearchResults';
 
 class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      searchResults: [
+        {
+          name:'Glimpse of Us',
+          artist: 'Joji',
+          album: 'smitheerens',
+          id:'1'
+        }
+      ]
+    };
+  }
+
   render(){
     return (
       // Outer Element
@@ -13,8 +28,8 @@ class App extends React.Component{
           <SearchBar />
   
           <div className="App-playlist">
-            {/* <SearchResults />
-            <Playlist /> */}
+            <SearchResults searchResults={this.state.searchResults} />
+            {/* <Playlist /> */}
           </div>
         </div>
       </div>
