@@ -9,7 +9,13 @@ export default class TrackList extends React.Component{
                 {/* Iterates through each track */}
                 {
                     this.props.tracks.map((track)=>{
-                        return <Track key={track.id} track={track}/>
+                        // Renders track component
+                        return <Track 
+                                    key={track.id} 
+                                    track={track}
+                                    onAdd={this.props.onAdd}
+                                    onRemove={this.props.onRemove}
+                                    isRemoval={this.props.isRemoval} />
                     })
                 }
             </div>
